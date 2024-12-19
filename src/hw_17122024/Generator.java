@@ -1,0 +1,36 @@
+package hw_17122024;
+
+import java.util.Random;
+
+public class Generator {
+    Random rand = new Random();
+
+    public Square makeSquare (){
+        Square square = new Square(rand.nextInt(1, 50));
+        Square[] squaresArr = new Square[10];
+        for (int i = 0; i < 10; i++) {
+
+        }
+        return square;
+    }
+
+    public Triangle makeTriangle (){
+        Triangle triangle = new Triangle(rand.nextInt(1, 50), rand.nextInt(1, 50), rand.nextInt(1, 50));
+        if (triangle.side < (triangle.height + triangle.base)){
+        }
+        return triangle;
+    }
+
+    public Circle makeCircle (){
+        Circle circle = new Circle(rand.nextInt(1, 50));
+        return circle;
+    }
+
+
+    public static void main(String[] args) {
+        Generator generator = new Generator();
+        System.out.println("Квадрат " + generator.makeSquare());
+        System.out.println("Круг " + generator.makeCircle());
+        System.out.println("Треугольник " + generator.makeTriangle());
+    }
+}
